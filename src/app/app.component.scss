@@ -1,0 +1,81 @@
+.avatar {
+    vertical-align:text-top;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.fr {
+    float: left;
+}
+
+.success {
+    border-color: white;
+    color: white;
+    
+}
+
+.success:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+.danger {
+    border-color: white;
+    color: white;
+
+}
+
+.danger:hover {
+    background-color: rgb(233, 61, 61);
+    color: white;
+}
+.success2 {
+    background-color:#4CAF50 ;
+    
+    color: white;
+    
+}
+
+.success2:hover {
+    background-color: #04aa6d;
+    color: white;
+}
+.danger2 {
+    background-color: rgb(233, 61, 61);
+    color: white;
+
+}
+
+.danger2:hover {
+    background-color: rgb(248, 7, 7);
+    color: white;
+}
+
+
+.button {
+   
+    padding: 10px 20px;
+    margin: 8px 0;
+   
+    cursor: pointer;
+    width: 50%;
+  }
+
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  img.avatar {
+    width: 40%;
+    height: 35%;
+    border-radius: 50%;
+  }
+
+  .b1 {
+    background-color: rgb(247, 247, 247);
+    color: rgb(0, 0, 0);
+    opacity: 0.7;
+}
+

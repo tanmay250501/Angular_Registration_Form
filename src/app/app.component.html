@@ -1,0 +1,104 @@
+<div class="container-fluid" >
+  <div class="row">
+
+    <div class="col-lg-4" style="background-image: url('assets/3.jpg');background-repeat: no-repeat;background-size:cover;height: 650px;">
+      <div class="mb-3 mt-3" >
+        <a style="color: aliceblue;margin-left: 35%;font-size: 20px;"><b>ADD MEMBER</b></a>
+      </div>
+      <div class="container mt-3" style="color: white;">
+        <div class="imgcontainer">
+          <img src="assets/avatar2.png" alt="Avatar" class="avatar">
+        </div>
+        <div class="mb-3 mt-3" >
+          <label for="text" style="margin-bottom:5px">Memeber Name</label>
+          <input type="text" class="form-control" placeholder="Enter your Name" [(ngModel)]="candidateName" > 
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="text" style="margin-bottom:5px">Post</label>
+          <input type="text" class="form-control" placeholder="Jr. Developer" [(ngModel)]="candidatePost"> 
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="text" style="margin-bottom:5px">Mail Id</label>
+          <input type="email" class="form-control" placeholder="example@gmail.com" [(ngModel)]="candidateId" > 
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="text" style="margin-bottom:5px">Contact Number</label>
+          <input type="text" class="form-control" placeholder="+91 12345 67890" [(ngModel)]="candidatePhone"> 
+        </div>
+        <div class="mb-3 mt-3" style="margin-top: 10px;">
+          <button type="button" class="btn danger button" (click)="clear()" ><b>Clear</b></button>
+    <button type="submit" class="btn success button" (click)="submit()" [disabled]="candidatePhone == ''"><b>Submit</b></button>
+        </div>
+      </div>
+      
+    </div>
+    <div class="col-lg-8" style="background-image: url('assets/2.jpg');background-repeat: no-repeat;background-size:cover;height: 650px;">
+      <div class="mb-3 mt-3" >
+        <a style="color: aliceblue;margin-left: 40%;font-size: 20px;margin-bottom: 60px;"><b>EMPLOYEE LIST</b></a>
+      </div>
+      
+      <table class="table table-bordered table-light b1 table-hover" style="color: rgb(0, 0, 0); margin-top: 20px;">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Member Name</th>
+            <th scope="col">Mail Id</th>
+            <th scope="col">Contact No</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of candidate;let i=index" >
+            <th scope="row">{{i + 1}}</th>
+            <td>{{c.name}}</td>
+            <td>{{c.email}}</td>
+            <td>{{c.phone}}</td>
+            <td > <button  style="color: rgb(0, 0, 0);;" class="btn  fr"tooltip="Edit" (click)="openModal(edittemplate,i)"
+              placement="bottom" ><span  class='bi bi-pencil-square' style="font-size: 20px;"></span></button>
+              <button  style="color: rgb(0, 0, 0);font-size: 18px;"class="btn  fr"  (click)="delete(i)" tooltip="Delete"
+              placement="bottom" ><i class="fas fa-user-alt-slash" aria-hidden="true" ></i></button></td>
+          </tr>
+
+        </tbody>
+      </table>
+</div>
+
+
+
+<router-outlet></router-outlet>
+
+
+<ng-template #edittemplate>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Add Member</h4>
+    
+  </div>
+   <!-- Modal body -->
+   <div class="modal-body">
+    <div class="mb-3 mt-3" >
+      <label for="text" style="margin-bottom:5px">Memeber Name</label>
+      <input type="text" class="form-control" placeholder="Enter your Name" [(ngModel)]="candidateName" > 
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="text" style="margin-bottom:5px">Post</label>
+      <input type="text" class="form-control" placeholder="Jr. Developer" [(ngModel)]="candidatePost"> 
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="text" style="margin-bottom:5px">Mail Id</label>
+      <input type="email" class="form-control" placeholder="example@gmail.com" [(ngModel)]="candidateId" > 
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="text" style="margin-bottom:5px">Contact Number</label>
+      <input type="text" class="form-control" placeholder="+91 12345 67890" [(ngModel)]="candidatePhone"> 
+    </div>
+    
+  </div>
+
+  <!-- Modal footer -->
+  <div class="modal-footer">
+    <button type="button" class="btn danger2 button" (click)="close()" ><b>Close</b></button>
+<button type="submit" class="btn success2 button" 
+(click)="update()" ><b>Update</b></button>
+    
+  </div> 
+</ng-template>
